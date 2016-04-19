@@ -76,7 +76,6 @@ var App = (function () {
 
     /*Open-Sidebar when click on topbar button*/
       $('.am-toggle-left-sidebar').on("click", function(e){
-        console.log('test');
         if( openSidebar && body.hasClass( config.openLeftSidebarClass ) ){
           cSidebar();
         }else if( !openSidebar ){
