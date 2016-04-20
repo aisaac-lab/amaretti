@@ -85,7 +85,7 @@ var App = (function () {
         console.log(openSidebar);
         console.log(config.openLeftSidebarClass);
 
-        if( openSidebar && body.hasClass( config.openLeftSidebarClass ) ){
+        if( openSidebar && $('body').hasClass( config.openLeftSidebarClass ) ){
           console.log("click c");
           cSidebar();
         }else if( !openSidebar ){
