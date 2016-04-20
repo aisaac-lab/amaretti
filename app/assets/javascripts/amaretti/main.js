@@ -42,6 +42,7 @@ var App = (function () {
   function leftSidebarInit(){
 
     function oSidebar(){
+      console.log("leftSidebarInit oSidebar");
       body.addClass( config.openLeftSidebarClass + " " + config.transitionClass );
       openSidebar = true;
     }
@@ -77,8 +78,10 @@ var App = (function () {
     /*Open-Sidebar when click on topbar button*/
       $('.am-toggle-left-sidebar').on("click", function(e){
         if( openSidebar && body.hasClass( config.openLeftSidebarClass ) ){
+          console.log("click c");
           cSidebar();
         }else if( !openSidebar ){
+          console.log("click o");
           oSidebar();
         }
         e.stopPropagation();
