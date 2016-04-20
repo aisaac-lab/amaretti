@@ -45,12 +45,14 @@ var App = (function () {
       console.log("leftSidebarInit oSidebar");
       console.log(body);
       console.log(config.openLeftSidebarClass);
-      body.addClass( config.openLeftSidebarClass + " " + config.transitionClass );
+      // body.addClass( config.openLeftSidebarClass + " " + config.transitionClass );
+      $("body").addClass("open-left-sidebar");
       openSidebar = true;
     }
 
     function cSidebar(){
-      body.removeClass( config.openLeftSidebarClass ).addClass( config.transitionClass );
+      // body.removeClass( config.openLeftSidebarClass ).addClass( config.transitionClass );
+      $("body").removeClass("open-left-sidebar");
       sidebarDelay();
     }
 
