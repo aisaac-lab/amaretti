@@ -43,6 +43,8 @@ var App = (function () {
 
     function oSidebar(){
       console.log("leftSidebarInit oSidebar");
+      console.log(body);
+      console.log(config.openLeftSidebarClass);
       body.addClass( config.openLeftSidebarClass + " " + config.transitionClass );
       openSidebar = true;
     }
