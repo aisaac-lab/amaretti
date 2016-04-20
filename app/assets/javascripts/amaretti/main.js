@@ -23,7 +23,6 @@ var App = (function () {
   };
 
   var colors = {};
-  var body = $("body");
   var wrapper = $(".am-wrapper");
   var leftSidebar = $(".am-left-sidebar");
   var rightSidebar = $(".am-right-sidebar");
@@ -42,17 +41,12 @@ var App = (function () {
   function leftSidebarInit(){
 
     function oSidebar(){
-      console.log("leftSidebarInit oSidebar");
-      console.log(body);
-      console.log(config.openLeftSidebarClass);
-      // body.addClass( config.openLeftSidebarClass + " " + config.transitionClass );
-      $("body").addClass("open-left-sidebar");
+      $('body').addClass( config.openLeftSidebarClass + " " + config.transitionClass );
       openSidebar = true;
     }
 
     function cSidebar(){
-      // body.removeClass( config.openLeftSidebarClass ).addClass( config.transitionClass );
-      $("body").removeClass("open-left-sidebar");
+      $('body').removeClass( config.openLeftSidebarClass ).addClass( config.transitionClass );
       sidebarDelay();
     }
 
@@ -81,10 +75,6 @@ var App = (function () {
 
     /*Open-Sidebar when click on topbar button*/
       $('.am-toggle-left-sidebar').on("click", function(e){
-        console.log('click');
-        console.log(openSidebar);
-        console.log(config.openLeftSidebarClass);
-
         if( openSidebar && $('body').hasClass( config.openLeftSidebarClass ) ){
           console.log("click c");
           cSidebar();
@@ -98,7 +88,7 @@ var App = (function () {
 
     /*Close sidebar on click outside*/
       $(document).on("touchstart mousedown",function(e){
-        if ( !$(e.target).closest(leftSidebar).length && body.hasClass( config.openLeftSidebarClass ) ) {
+        if ( !$(e.target).closest(leftSidebar).length && $('body').hasClass( config.openLeftSidebarClass ) ) {
           cSidebar();
         }
       });
@@ -199,18 +189,18 @@ var App = (function () {
   function rightSidebarInit(){
 
     function oSidebar(){
-      body.addClass( config.openRightSidebarClass  + " " + config.transitionClass );
+      $('body').addClass( config.openRightSidebarClass  + " " + config.transitionClass );
     }
 
     function cSidebar(){
-      body.removeClass( config.openRightSidebarClass ).addClass( config.transitionClass );
+      $('body').removeClass( config.openRightSidebarClass ).addClass( config.transitionClass );
       sidebarDelay();
     }
 
     if( rightSidebar.length > 0 ){
       /*Open-Sidebar when click on topbar button*/
       $('.am-toggle-right-sidebar').on("click", function(e){
-        if( openSidebar && body.hasClass( config.openRightSidebarClass ) ){
+        if( openSidebar && $('body').hasClass( config.openRightSidebarClass ) ){
           cSidebar();
         }else if( !openSidebar ){
           oSidebar();
@@ -222,7 +212,7 @@ var App = (function () {
 
       /*Close sidebar on click outside*/
       $( document ).on("mousedown touchstart",function( e ){
-        if ( !$( e.target ).closest( rightSidebar ).length && body.hasClass( config.openRightSidebarClass ) ) {
+        if ( !$( e.target ).closest( rightSidebar ).length && $('body').hasClass( config.openRightSidebarClass ) ) {
           cSidebar();
         }
       });
@@ -244,13 +234,13 @@ var App = (function () {
       fallbackToMouseEvents: false,
       swipeRight: function(e) {
         if( !openSidebar && !wrapper.hasClass( config.removeLeftSidebarClass ) ){
-          body.addClass( config.openLeftSidebarClass + " " + config.transitionClass );
+          $('body').addClass( config.openLeftSidebarClass + " " + config.transitionClass );
           openSidebar = true;
         }
       },
       swipeLeft: function(e){
         if( !openSidebar && rightSidebar.length > 0 ){
-          body.addClass( config.openRightSidebarClass + " " + config.transitionClass );
+          $('body').addClass( config.openRightSidebarClass + " " + config.transitionClass );
           openSidebar = true;
         }
       },
@@ -394,7 +384,7 @@ var App = (function () {
 
       /*Body transition effect*/
         leftSidebar.on("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd", function() {
-          body.removeClass( config.transitionClass );
+          $('body').removeClass( config.transitionClass );
         });
 
       /*Scroll Top button*/
