@@ -7535,7 +7535,7 @@ button:focus {
   line-height: 80px;
   height: 80px;
   width: 100px;
-  background-image: url("../img/logo.png");
+  background-image: assets-url("amaretti/logo.png");
   background-repeat: no-repeat;
   background-position: center center;
   margin-right: 20px;
@@ -7557,7 +7557,7 @@ button:focus {
   margin-left: 0;
   margin-right: 10px;
   width: 180px;
-  background-image: url("../img/logo-full.png");
+  background-image: assets-url("amaretti/logo-full.png");
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .am-nosidebar-left .am-top-header .navbar-header .navbar-brand {
@@ -8406,7 +8406,7 @@ button:focus {
     display: block;
   }
   .am-left-sidebar .am-logo {
-    background: url("../img/logo-full.png") no-repeat 15px center;
+    background: assets-url("amaretti/logo-full.png") no-repeat 15px center;
     height: 70px;
     background-color: #393838;
     border-bottom: 1px solid #353434;
@@ -8415,7 +8415,7 @@ button:focus {
 }
 @media (max-width: 767px) and (-webkit-min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 2/1), (min-resolution: 192dpi) {
   .am-left-sidebar .am-logo {
-    background-image: url("../img/logo-full-retina.png");
+    background-image: assets-url("amaretti/logo-full-retina.png");
     background-size: 150px 39px;
   }
 }
