@@ -1,3 +1,3 @@
 source 'https://rubygems.org'
-# Specify your gem's dependencies in amaretti.gemspec
+source "https://rails-assets.org"
 gemspec
